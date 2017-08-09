@@ -1,0 +1,13 @@
+#!/bin/sh
+NAME=$1
+TEMPLATEDIR="`cd \`dirname "$0"\` && pwd`"
+if [ ! -d "$NAME" ]; then
+    mkdir "$NAME"
+else
+    echo "Simulation exists!!"
+    exit 0
+fi
+cp $TEMPLATEDIR/configure $NAME
+exit
+
+

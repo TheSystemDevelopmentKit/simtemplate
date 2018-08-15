@@ -148,6 +148,7 @@ thesdk.initlog("${PYTHONPATH}/${PYFILE}.status")
 from inv_sim import *
 t=inv_sim()
 t.models=${PYTHONMODELS}
+t.define_simple()
 t.picpath=picpath;
 t.run_simple()
 t.plot()
@@ -378,6 +379,7 @@ clean:
 	rm -f \$(MATLABPATH)/*.status
 	rm -f \$(PYTHONPATH)/*.status
 	rm -f \$(SLIDEPATH)/Pics/*.eps
+	rm -f \$(SLIDEPATH)/Pics/*.pdf
 	rm -f \$(PICPATH)/*.eps
 	rm -f \$(SLIDEPATH)/Pdffiles/*.pdf
 	rm -rf \$(DEPDIR)

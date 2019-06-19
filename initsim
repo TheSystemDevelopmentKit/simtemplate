@@ -1,13 +1,15 @@
 #!/bin/sh
 NAME=$1
 TEMPLATEDIR="`cd \`dirname "$0"\` && pwd`"
+TEMPLATEREMOTE="git@github.com:TheSystemDevelopmentKit/Inverter_simulation.git"
+
 if [ ! -d "$NAME" ]; then
-    mkdir "$NAME"
+    git clone ${TEMPLATEREMOTE} $NAME
 else
     echo "Simulation exists!!"
     exit 0
 fi
-cp $TEMPLATEDIR/configure $NAME
+#cp $TEMPLATEDIR/configure $NAME
 exit
 
 
